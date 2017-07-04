@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.4.RELEASE</version>
-		<relativePath/>
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -25,6 +25,9 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<spring-cloud.version>Dalston.SR1</spring-cloud.version>
+		<commons-lang.version>3.0</commons-lang.version>
+		<commons-beanutils.version>1.8.0</commons-beanutils.version>
+		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 	</properties>
 
 	<dependencies>
@@ -57,7 +60,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
+<!-- commons-beanutils - Copy properties -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
 		<!-- drjoy -->
 		<dependency>
 			<groupId>jp.drjoy.service</groupId>
@@ -79,6 +87,8 @@
 			<artifactId>drjoy-service-base</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		
 		<!-- k.sumi: gRPCのLibrary-1.4.0を使用する場合は必須 -->
 		<dependency>
 			<groupId>io.netty</groupId>

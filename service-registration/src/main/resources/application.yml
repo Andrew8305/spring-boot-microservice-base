@@ -52,3 +52,5 @@ management:
 security:
   basic:
     enabled: true
+    
+
