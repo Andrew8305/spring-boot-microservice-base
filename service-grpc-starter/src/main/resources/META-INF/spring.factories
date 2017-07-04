@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  jp.drjoy.service.grpc.starter.configure.GrpcAutoConfiguration

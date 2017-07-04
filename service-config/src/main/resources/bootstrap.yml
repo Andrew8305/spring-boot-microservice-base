@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config
+
+# todo:k.sumi 仮設定
+endpoints:
+  env:
+    enabled: true
+
+management:
+  security:
+    enabled: false

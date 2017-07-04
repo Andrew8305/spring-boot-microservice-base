@@ -1,0 +1,40 @@
+server:
+  port: ${PORT:5102}
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL:amqp://drjoy.rep}
+    ssl:
+      enabled: false
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+---
+spring:
+  profiles: cloud
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    ssl:
+      enabled: false
+
+management:
+  security:
+    enabled: true
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: drjoy1115

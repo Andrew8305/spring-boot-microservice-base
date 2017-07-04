@@ -1,0 +1,7 @@
+#spring:
+#  datasource:
+#    base:
+#      url:  jdbc:postgresql://lbox/base
+#      username: vagrant
+#      password: vagrant
+#      driverClassName: org.postgresql.Driver

@@ -1,0 +1,6 @@
+
+grpc:
+  server:
+    port: 52050
+    service:
+      base-package: jp.drjoy.service.registrationtion.service

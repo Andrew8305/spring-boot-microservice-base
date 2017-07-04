@@ -1,0 +1,5 @@
+grpc:
+  server:
+    port: 51010
+    service:
+      base-package: jp.drjoy.service.template.service

@@ -1,0 +1,34 @@
+@Library('drjoy-lib@master')
+import jp.drjoy.Libs
+
+// library
+libs = new Libs()
+
+node {
+  try {
+    docker.image('drjoy/middleware:latest').inside() {
+      stage('Checkout') {
+        libs.checkout('service-central', 'develop')
+      }
+
+      stage('Build & Test & Deploy') {
+        String settings = "--settings /home/jenkins/.m2/settings.xml"
+        sh "mvn clean heroku:deploy ${settings} -Dapp.name=service-central -Deureka.password=drjoy1115"
+      }
+
+      stage('Notification') {
+        // send slack
+        libs.slack(true)
+      }
+
+      stage('Terminate') {
+        // stub
+      }
+    }
+
+  } catch (ex) {
+    // send slack
+    libs.slack(false, "${ex}")
+    throw ex
+  }
+}

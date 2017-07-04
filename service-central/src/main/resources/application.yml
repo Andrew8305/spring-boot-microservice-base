@@ -1,0 +1,33 @@
+server:
+  port: ${PORT:5100}
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+---
+
+spring:
+  profiles: cloud
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: eureka-server
+    password: ${EUREKA_PASSWORD}

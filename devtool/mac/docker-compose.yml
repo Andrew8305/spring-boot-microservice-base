@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  # postgres
+  postgres:
+    build: ../docker/psql
+    image: drjoy/postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+
+  # mongo
+  mongo:
+    build: ../docker/mongo
+    image: drjoy/mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+
+  # rabbitmq
+  rabbitmq:
+    build: ../docker/rabbitmq
+    image: drjoy/rabbitmq
+    container_name: rabbitmq
+    ports:
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"      
+
+  # elasticsearch
+  # elastic:
+  #   build: ../docker/elastic
+  #   image: drjoy/elastic
+  #   container_name: elastic
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9300"
+  #   environment:
+  #     ES_JAVA_OPTS: '-Xms256m -Xmx256m'

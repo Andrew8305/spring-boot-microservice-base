@@ -1,0 +1,71 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL:amqp://drjoy.rep}
+    ssl:
+      enabled: false
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+zuul:
+  routes:
+    web-front:
+      path: /api/**
+      serviceId: web-front
+    mobile-front:
+      path: /mobile/api/**
+      serviceId: mobile-front
+    monitor:
+      path: /turbine/**
+      serviceId: monitor
+
+  retryable: false
+  ribbon-isolation-strategy: thread
+  host:
+    max-per-route-connections: 20 # def
+    max-total-connections: 200 # def
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000 # def=1000
+
+#web-front:
+#  ribbon:
+#    list_of_services: http://localhost:5101
+
+---
+spring:
+  profiles: cloud
+
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    ssl:
+      enabled: false
+
+management:
+  security:
+    enabled: true
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: drjoy1115

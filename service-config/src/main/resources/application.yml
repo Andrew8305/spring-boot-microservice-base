@@ -1,0 +1,46 @@
+server:
+  port: ${PORT:8888}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dr-joy/configuration.git
+          clone-on-start: true
+          username: configure-server
+          password: "8U,ZeK>w_\"]3-'W^Q?R:"
+      enabled: true
+      override-system-properties: false
+
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL:amqp://drjoy.rep}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:5100}/eureka/
+    fetch-registry: false
+    register-with-eureka: false
+
+security:
+  user:
+    name: serverconfig
+    password: ${CONFIG_PASSWORD:password}
+
+management:
+  add-application-context-header: false
+
+---
+spring:
+  profiles: cloud
+  cloud:
+    config:
+      server:
+        git:
+          password: ${GITHUB_PASSWORD}
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true

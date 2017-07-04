@@ -1,0 +1,54 @@
+server:
+  port: ${PORT:5205}
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL:amqp://drjoy.rep}
+    ssl:
+      enabled: false
+
+grpc:
+  server:
+    port: 52050
+    service:
+      base-package: jp.drjoy.service.registrationtion.service
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    metadata-map:
+      instance_id: ${spring.application.name}:${grpc.port}
+#      instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}    non-secure-port: ${grpc.server.port}
+#      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${grpc.port}}}
+    non-secure-port-enabled: true
+    non-secure-port: ${grpc.server.port}
+
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+---
+spring:
+  profiles: cloud
+  cloud:
+    bus:
+      enabled: true
+  rabbitmq:
+    ssl:
+      enabled: true
+
+management:
+  security:
+    enabled: true
+
+security:
+  basic:
+    enabled: true

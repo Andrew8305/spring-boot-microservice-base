@@ -1,0 +1,5 @@
+grpc:
+  server:
+    port: 52030
+    service:
+      base-package: jp.drjoy.service.meeting.service

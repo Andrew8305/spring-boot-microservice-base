@@ -1,0 +1,6 @@
+
+grpc:
+  server:
+    port: 52040
+    service:
+      base-package: jp.drjoy.service.chatvice

@@ -1,0 +1,18 @@
+{
+    "services" : [
+        "service-central",
+        "service-config",
+        "service-monitor",
+        "service-gateway",
+        "service-web-front",
+        "service-mobile-front",
+        "service-group",
+        "service-registration",
+        "service-chat",
+        "service-meeting",
+        "service-calendar",
+        "web-admin",
+        "web-drjoy",
+        "web-prjoy"
+    ]
+}
