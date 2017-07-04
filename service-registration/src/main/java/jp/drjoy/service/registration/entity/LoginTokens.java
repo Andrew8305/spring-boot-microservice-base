@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.drjoy.service.admin.entity;
+package jp.drjoy.service.registration.entity;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -15,22 +15,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import jp.drjoy.service.common.dto.PO;
-
 /**
  *
- * @author Quyettv
+ * @author Duong Van Dinh
  */
 @Entity
-@Table(name = "timesheets")
-public class Timesheets extends PO<Long> implements Serializable {
+@Table(name = "login_tokens")
+public class LoginTokens implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -44,34 +41,28 @@ public class Timesheets extends PO<Long> implements Serializable {
 	private long userId;
 	@Basic(optional = false)
 	@NotNull
-	@Column(name = "type")
-	private int type;
+	@Size(min = 1, max = 255)
+	@Column(name = "token_value")
+	private String tokenValue;
 	@Basic(optional = false)
 	@NotNull
-	@Lob
-	@Size(min = 1, max = 2147483647)
-	@Column(name = "content")
-	private String content;
+	@Column(name = "status")
+	private int status;
 	@Basic(optional = false)
 	@NotNull
-	@Column(name = "start_time")
+	@Column(name = "first_login_time")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date startTime;
+	private Date firstLoginTime;
 	@Basic(optional = false)
 	@NotNull
-	@Column(name = "end_time")
+	@Column(name = "last_login_time")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date endTime;
+	private Date lastLoginTime;
 	@Basic(optional = false)
 	@NotNull
-	@Column(name = "duration")
-	private int duration;
-	@Column(name = "project_id")
-	private BigInteger projectId;
-	@Basic(optional = false)
-	@NotNull
-	@Column(name = "department_id")
-	private int departmentId;
+	@Column(name = "force_delete_time")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date forceDeleteTime;
 	@Column(name = "create_user_id")
 	private BigInteger createUserId;
 	@Basic(optional = false)
@@ -87,23 +78,22 @@ public class Timesheets extends PO<Long> implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateTime;
 
-	public Timesheets() {
+	public LoginTokens() {
 	}
 
-	public Timesheets(Long id) {
+	public LoginTokens(Long id) {
 		this.id = id;
 	}
 
-	public Timesheets(Long id, long userId, int type, String content, Date startTime, Date endTime, int duration,
-			int departmentId, Date createTime, Date updateTime) {
+	public LoginTokens(Long id, long userId, String tokenValue, int status, Date firstLoginTime, Date lastLoginTime,
+			Date forceDeleteTime, Date createTime, Date updateTime) {
 		this.id = id;
 		this.userId = userId;
-		this.type = type;
-		this.content = content;
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.duration = duration;
-		this.departmentId = departmentId;
+		this.tokenValue = tokenValue;
+		this.status = status;
+		this.firstLoginTime = firstLoginTime;
+		this.lastLoginTime = lastLoginTime;
+		this.forceDeleteTime = forceDeleteTime;
 		this.createTime = createTime;
 		this.updateTime = updateTime;
 	}
@@ -124,60 +114,44 @@ public class Timesheets extends PO<Long> implements Serializable {
 		this.userId = userId;
 	}
 
-	public int getType() {
-		return type;
+	public String getTokenValue() {
+		return tokenValue;
 	}
 
-	public void setType(int type) {
-		this.type = type;
+	public void setTokenValue(String tokenValue) {
+		this.tokenValue = tokenValue;
 	}
 
-	public String getContent() {
-		return content;
+	public int getStatus() {
+		return status;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
-	public Date getStartTime() {
-		return startTime;
+	public Date getFirstLoginTime() {
+		return firstLoginTime;
 	}
 
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
+	public void setFirstLoginTime(Date firstLoginTime) {
+		this.firstLoginTime = firstLoginTime;
 	}
 
-	public Date getEndTime() {
-		return endTime;
+	public Date getLastLoginTime() {
+		return lastLoginTime;
 	}
 
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
+	public void setLastLoginTime(Date lastLoginTime) {
+		this.lastLoginTime = lastLoginTime;
 	}
 
-	public int getDuration() {
-		return duration;
+	public Date getForceDeleteTime() {
+		return forceDeleteTime;
 	}
 
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public BigInteger getProjectId() {
-		return projectId;
-	}
-
-	public void setProjectId(BigInteger projectId) {
-		this.projectId = projectId;
-	}
-
-	public int getDepartmentId() {
-		return departmentId;
-	}
-
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
+	public void setForceDeleteTime(Date forceDeleteTime) {
+		this.forceDeleteTime = forceDeleteTime;
 	}
 
 	public BigInteger getCreateUserId() {
@@ -223,10 +197,10 @@ public class Timesheets extends PO<Long> implements Serializable {
 	public boolean equals(Object object) {
 		// TODO: Warning - this method won't work in the case the id fields are
 		// not set
-		if (!(object instanceof Timesheets)) {
+		if (!(object instanceof LoginTokens)) {
 			return false;
 		}
-		Timesheets other = (Timesheets) object;
+		LoginTokens other = (LoginTokens) object;
 		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
 			return false;
 		}
@@ -235,7 +209,7 @@ public class Timesheets extends PO<Long> implements Serializable {
 
 	@Override
 	public String toString() {
-		return "com.ominext.hrm.entity.Timesheets[ id=" + id + " ]";
+		return "com.ominext.entities.LoginTokens[ id=" + id + " ]";
 	}
 
 }

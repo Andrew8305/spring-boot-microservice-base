@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.drjoy.service.admin.entity;
+package jp.drjoy.service.registration.entity;
 
 import java.io.Serializable;
 import java.math.BigInteger;

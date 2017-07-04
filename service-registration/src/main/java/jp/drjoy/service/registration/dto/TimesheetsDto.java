@@ -11,7 +11,7 @@
 * OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 */
 
-package jp.drjoy.service.admin.dto;
+package jp.drjoy.service.registration.dto;
 
 import java.io.Serializable;
 

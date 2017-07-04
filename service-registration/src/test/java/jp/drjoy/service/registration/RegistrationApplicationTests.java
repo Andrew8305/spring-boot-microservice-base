@@ -1,4 +1,4 @@
-package jp.drjoy.service;
+package jp.drjoy.service.registration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

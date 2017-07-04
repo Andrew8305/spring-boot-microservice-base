@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.drjoy.service.admin.entity;
+package jp.drjoy.service.registration.entity;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -21,25 +21,48 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import jp.drjoy.service.common.dto.DTO;
+
 /**
  *
  * @author Duong Van Dinh
  */
 @Entity
-@Table(name = "departments")
-public class Departments implements Serializable {
+@Table(name = "users")
+public class User extends DTO<Long> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
 	@Column(name = "id")
 	private Long id;
+	@Size(max = 50)
+	@Column(name = "user_name")
+	private String userName;
+	@Size(max = 255)
+	@Column(name = "full_name")
+	private String fullName;
+	@Size(max = 255)
+	@Column(name = "password")
+	private String password;
+	@Column(name = "last_password_change")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastPasswordChange;
+	@Column(name = "login_token_id")
+	private BigInteger loginTokenId;
+	@Column(name = "department_id")
+	private BigInteger departmentId;
+	@Column(name = "role_id")
+	private BigInteger roleId;
 	@Basic(optional = false)
-	@NotNull
-	@Size(min = 1, max = 50)
-	@Column(name = "department_name")
-	private String departmentName;
+	
+	@Column(name = "locked_time")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lockedTime;
+	@Column(name = "locked_reason")
+	private Integer lockedReason;
 	@Basic(optional = false)
 	@NotNull
 	@Column(name = "status")
@@ -47,28 +70,32 @@ public class Departments implements Serializable {
 	@Column(name = "create_user_id")
 	private BigInteger createUserId;
 	@Basic(optional = false)
-	@NotNull
+
 	@Column(name = "create_time")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createTime;
 	@Column(name = "update_user_id")
 	private BigInteger updateUserId;
 	@Basic(optional = false)
-	@NotNull
+
 	@Column(name = "update_time")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateTime;
 
-	public Departments() {
+	public User() {
 	}
 
-	public Departments(Long id) {
+	public User(Long id) {
 		this.id = id;
 	}
+	
+	public User(String userName) {
+		this.userName = userName;
+	}
 
-	public Departments(Long id, String departmentName, int status, Date createTime, Date updateTime) {
+	public User(Long id, Date lockedTime, int status, Date createTime, Date updateTime) {
 		this.id = id;
-		this.departmentName = departmentName;
+		this.lockedTime = lockedTime;
 		this.status = status;
 		this.createTime = createTime;
 		this.updateTime = updateTime;
@@ -82,12 +109,76 @@ public class Departments implements Serializable {
 		this.id = id;
 	}
 
-	public String getDepartmentName() {
-		return departmentName;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Date getLastPasswordChange() {
+		return lastPasswordChange;
+	}
+
+	public void setLastPasswordChange(Date lastPasswordChange) {
+		this.lastPasswordChange = lastPasswordChange;
+	}
+
+	public BigInteger getLoginTokenId() {
+		return loginTokenId;
+	}
+
+	public void setLoginTokenId(BigInteger loginTokenId) {
+		this.loginTokenId = loginTokenId;
+	}
+
+	public BigInteger getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(BigInteger departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	public BigInteger getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(BigInteger roleId) {
+		this.roleId = roleId;
+	}
+
+	public Date getLockedTime() {
+		return lockedTime;
+	}
+
+	public void setLockedTime(Date lockedTime) {
+		this.lockedTime = lockedTime;
+	}
+
+	public Integer getLockedReason() {
+		return lockedReason;
+	}
+
+	public void setLockedReason(Integer lockedReason) {
+		this.lockedReason = lockedReason;
 	}
 
 	public int getStatus() {
@@ -141,10 +232,10 @@ public class Departments implements Serializable {
 	public boolean equals(Object object) {
 		// TODO: Warning - this method won't work in the case the id fields are
 		// not set
-		if (!(object instanceof Departments)) {
+		if (!(object instanceof User)) {
 			return false;
 		}
-		Departments other = (Departments) object;
+		User other = (User) object;
 		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
 			return false;
 		}
@@ -153,7 +244,7 @@ public class Departments implements Serializable {
 
 	@Override
 	public String toString() {
-		return "com.ominext.entities.Departments[ id=" + id + " ]";
+		return "com.ominext.entities.Users[ id=" + id + " ]";
 	}
 
 }

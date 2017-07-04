@@ -11,7 +11,7 @@
 * OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 */
 
-package jp.drjoy.service.admin.controller;
+package jp.drjoy.service.registration.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -25,13 +25,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import jp.drjoy.service.admin.dto.TimesheetsDto;
-import jp.drjoy.service.admin.service.TimesheetService;
 import jp.drjoy.service.common.controller.BaseController;
 import jp.drjoy.service.common.service.BaseService;
 import jp.drjoy.service.common.util.Envelope;
 import jp.drjoy.service.common.util.FormError;
 import jp.drjoy.service.common.util.ListJson;
+import jp.drjoy.service.registration.dto.TimesheetsDto;
+import jp.drjoy.service.registration.service.TimesheetService;
 
 @RestController
 @RequestMapping("timesheet")
@@ -68,7 +68,7 @@ public class TimesheetController extends BaseController<TimesheetsDto> {
 
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
 	public String demo(){
-
+		System.out.println("hello dangnh");
 		return "hello";
 	}
 }

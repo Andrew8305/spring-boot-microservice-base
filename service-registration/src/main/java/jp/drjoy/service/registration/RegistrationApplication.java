@@ -1,9 +1,10 @@
-package jp.drjoy.service;
+package jp.drjoy.service.registration;
 
-import jp.drjoy.service.grpc.starter.EnableGrpcServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+import jp.drjoy.service.grpc.starter.EnableGrpcServer;
 
 @SpringBootApplication
 @EnableEurekaClient

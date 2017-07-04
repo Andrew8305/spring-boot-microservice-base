@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.drjoy.service.admin.entity;
+package jp.drjoy.service.registration.entity;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -15,19 +15,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import jp.drjoy.service.common.dto.PO;
+
 /**
  *
- * @author Duong Van Dinh
+ * @author Quyettv
  */
 @Entity
-@Table(name = "m_roles")
-public class MRoles implements Serializable {
+@Table(name = "timesheets")
+public class Timesheets extends PO<Long> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -37,15 +40,38 @@ public class MRoles implements Serializable {
 	private Long id;
 	@Basic(optional = false)
 	@NotNull
-	@Size(min = 1, max = 255)
-	@Column(name = "role_name")
-	private String roleName;
-	@Column(name = "base_permission_group_id")
-	private BigInteger basePermissionGroupId;
+	@Column(name = "user_id")
+	private long userId;
 	@Basic(optional = false)
 	@NotNull
-	@Column(name = "status")
-	private int status;
+	@Column(name = "type")
+	private int type;
+	@Basic(optional = false)
+	@NotNull
+	@Lob
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "content")
+	private String content;
+	@Basic(optional = false)
+	@NotNull
+	@Column(name = "start_time")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date startTime;
+	@Basic(optional = false)
+	@NotNull
+	@Column(name = "end_time")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date endTime;
+	@Basic(optional = false)
+	@NotNull
+	@Column(name = "duration")
+	private int duration;
+	@Column(name = "project_id")
+	private BigInteger projectId;
+	@Basic(optional = false)
+	@NotNull
+	@Column(name = "department_id")
+	private int departmentId;
 	@Column(name = "create_user_id")
 	private BigInteger createUserId;
 	@Basic(optional = false)
@@ -61,17 +87,23 @@ public class MRoles implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateTime;
 
-	public MRoles() {
+	public Timesheets() {
 	}
 
-	public MRoles(Long id) {
+	public Timesheets(Long id) {
 		this.id = id;
 	}
 
-	public MRoles(Long id, String roleName, int status, Date createTime, Date updateTime) {
+	public Timesheets(Long id, long userId, int type, String content, Date startTime, Date endTime, int duration,
+			int departmentId, Date createTime, Date updateTime) {
 		this.id = id;
-		this.roleName = roleName;
-		this.status = status;
+		this.userId = userId;
+		this.type = type;
+		this.content = content;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.duration = duration;
+		this.departmentId = departmentId;
 		this.createTime = createTime;
 		this.updateTime = updateTime;
 	}
@@ -84,28 +116,68 @@ public class MRoles implements Serializable {
 		this.id = id;
 	}
 
-	public String getRoleName() {
-		return roleName;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
-	public BigInteger getBasePermissionGroupId() {
-		return basePermissionGroupId;
+	public int getType() {
+		return type;
 	}
 
-	public void setBasePermissionGroupId(BigInteger basePermissionGroupId) {
-		this.basePermissionGroupId = basePermissionGroupId;
+	public void setType(int type) {
+		this.type = type;
 	}
 
-	public int getStatus() {
-		return status;
+	public String getContent() {
+		return content;
 	}
 
-	public void setStatus(int status) {
-		this.status = status;
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public BigInteger getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(BigInteger projectId) {
+		this.projectId = projectId;
+	}
+
+	public int getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	public BigInteger getCreateUserId() {
@@ -151,10 +223,10 @@ public class MRoles implements Serializable {
 	public boolean equals(Object object) {
 		// TODO: Warning - this method won't work in the case the id fields are
 		// not set
-		if (!(object instanceof MRoles)) {
+		if (!(object instanceof Timesheets)) {
 			return false;
 		}
-		MRoles other = (MRoles) object;
+		Timesheets other = (Timesheets) object;
 		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
 			return false;
 		}
@@ -163,7 +235,7 @@ public class MRoles implements Serializable {
 
 	@Override
 	public String toString() {
-		return "com.ominext.entities.MRoles[ id=" + id + " ]";
+		return "com.ominext.hrm.entity.Timesheets[ id=" + id + " ]";
 	}
 
 }

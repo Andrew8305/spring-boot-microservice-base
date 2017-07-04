@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jp.drjoy.service.admin.entity;
+package jp.drjoy.service.registration.entity;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -26,8 +26,8 @@ import javax.validation.constraints.Size;
  * @author Duong Van Dinh
  */
 @Entity
-@Table(name = "login_tokens")
-public class LoginTokens implements Serializable {
+@Table(name = "m_roles")
+public class MRoles implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -37,32 +37,15 @@ public class LoginTokens implements Serializable {
 	private Long id;
 	@Basic(optional = false)
 	@NotNull
-	@Column(name = "user_id")
-	private long userId;
-	@Basic(optional = false)
-	@NotNull
 	@Size(min = 1, max = 255)
-	@Column(name = "token_value")
-	private String tokenValue;
+	@Column(name = "role_name")
+	private String roleName;
+	@Column(name = "base_permission_group_id")
+	private BigInteger basePermissionGroupId;
 	@Basic(optional = false)
 	@NotNull
 	@Column(name = "status")
 	private int status;
-	@Basic(optional = false)
-	@NotNull
-	@Column(name = "first_login_time")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date firstLoginTime;
-	@Basic(optional = false)
-	@NotNull
-	@Column(name = "last_login_time")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date lastLoginTime;
-	@Basic(optional = false)
-	@NotNull
-	@Column(name = "force_delete_time")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date forceDeleteTime;
 	@Column(name = "create_user_id")
 	private BigInteger createUserId;
 	@Basic(optional = false)
@@ -78,22 +61,17 @@ public class LoginTokens implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateTime;
 
-	public LoginTokens() {
+	public MRoles() {
 	}
 
-	public LoginTokens(Long id) {
+	public MRoles(Long id) {
 		this.id = id;
 	}
 
-	public LoginTokens(Long id, long userId, String tokenValue, int status, Date firstLoginTime, Date lastLoginTime,
-			Date forceDeleteTime, Date createTime, Date updateTime) {
+	public MRoles(Long id, String roleName, int status, Date createTime, Date updateTime) {
 		this.id = id;
-		this.userId = userId;
-		this.tokenValue = tokenValue;
+		this.roleName = roleName;
 		this.status = status;
-		this.firstLoginTime = firstLoginTime;
-		this.lastLoginTime = lastLoginTime;
-		this.forceDeleteTime = forceDeleteTime;
 		this.createTime = createTime;
 		this.updateTime = updateTime;
 	}
@@ -106,20 +84,20 @@ public class LoginTokens implements Serializable {
 		this.id = id;
 	}
 
-	public long getUserId() {
-		return userId;
+	public String getRoleName() {
+		return roleName;
 	}
 
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
-	public String getTokenValue() {
-		return tokenValue;
+	public BigInteger getBasePermissionGroupId() {
+		return basePermissionGroupId;
 	}
 
-	public void setTokenValue(String tokenValue) {
-		this.tokenValue = tokenValue;
+	public void setBasePermissionGroupId(BigInteger basePermissionGroupId) {
+		this.basePermissionGroupId = basePermissionGroupId;
 	}
 
 	public int getStatus() {
@@ -128,30 +106,6 @@ public class LoginTokens implements Serializable {
 
 	public void setStatus(int status) {
 		this.status = status;
-	}
-
-	public Date getFirstLoginTime() {
-		return firstLoginTime;
-	}
-
-	public void setFirstLoginTime(Date firstLoginTime) {
-		this.firstLoginTime = firstLoginTime;
-	}
-
-	public Date getLastLoginTime() {
-		return lastLoginTime;
-	}
-
-	public void setLastLoginTime(Date lastLoginTime) {
-		this.lastLoginTime = lastLoginTime;
-	}
-
-	public Date getForceDeleteTime() {
-		return forceDeleteTime;
-	}
-
-	public void setForceDeleteTime(Date forceDeleteTime) {
-		this.forceDeleteTime = forceDeleteTime;
 	}
 
 	public BigInteger getCreateUserId() {
@@ -197,10 +151,10 @@ public class LoginTokens implements Serializable {
 	public boolean equals(Object object) {
 		// TODO: Warning - this method won't work in the case the id fields are
 		// not set
-		if (!(object instanceof LoginTokens)) {
+		if (!(object instanceof MRoles)) {
 			return false;
 		}
-		LoginTokens other = (LoginTokens) object;
+		MRoles other = (MRoles) object;
 		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
 			return false;
 		}
@@ -209,7 +163,7 @@ public class LoginTokens implements Serializable {
 
 	@Override
 	public String toString() {
-		return "com.ominext.entities.LoginTokens[ id=" + id + " ]";
+		return "com.ominext.entities.MRoles[ id=" + id + " ]";
 	}
 
 }
