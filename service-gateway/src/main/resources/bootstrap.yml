@@ -20,8 +20,8 @@ eureka:
     eureka-connection-idle-timeout-seconds: 30 # def
     eureka-server-read-timeout-seconds: 8 # def
     eureka-server-connect-timeout-seconds: 5
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
     region: default
   instance:
     hostname: localhost

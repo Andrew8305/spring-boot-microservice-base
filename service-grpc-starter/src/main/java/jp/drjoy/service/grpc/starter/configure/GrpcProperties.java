@@ -16,7 +16,15 @@ public class GrpcProperties {
     /* server properties */
     private Server server = new Server();
 
-    @Data
+    public Server getServer() {
+		return server;
+	}
+
+	public void setServer(Server server) {
+		this.server = server;
+	}
+
+	@Data
     public static class Server {
 
         /* server listen port */
@@ -25,11 +33,36 @@ public class GrpcProperties {
         /* gPRC service */
         private Service service = new Service();
 
-        @Data
+        public int getPort() {
+			return port;
+		}
+
+		public void setPort(int port) {
+			this.port = port;
+		}
+
+		public Service getService() {
+			return service;
+		}
+
+		public void setService(Service service) {
+			this.service = service;
+		}
+
+		@Data
         public static class Service {
 
             /* service base package */
             private String basePackage;
+
+			public String getBasePackage() {
+				return basePackage;
+			}
+
+			public void setBasePackage(String basePackage) {
+				this.basePackage = basePackage;
+			}
+            
         }
     }
 }

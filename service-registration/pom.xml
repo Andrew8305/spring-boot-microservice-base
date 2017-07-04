@@ -74,7 +74,11 @@
 			<artifactId>protobuf-gen</artifactId>
 			<version>1.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>jp.drjoy.service</groupId>
+			<artifactId>drjoy-service-base</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- k.sumi: gRPCのLibrary-1.4.0を使用する場合は必須 -->
 		<dependency>
 			<groupId>io.netty</groupId>
