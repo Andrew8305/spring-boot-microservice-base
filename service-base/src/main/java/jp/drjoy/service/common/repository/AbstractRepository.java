@@ -306,7 +306,7 @@ public abstract class AbstractRepository<T, ID extends Serializable> {
 	@Transactional
 	public <S extends T> S save(S entity) {
 
-		if (entityInformation.isNew(entity)) {
+		if (JpaEntityInformationSupport.getEntityInformation(this.domainClass, this.entityManager).isNew(entity)) {
 			this.getEntityManager().persist(entity);
 			return entity;
 		} else {

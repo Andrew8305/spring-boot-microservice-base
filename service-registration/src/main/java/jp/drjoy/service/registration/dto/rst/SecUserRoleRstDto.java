@@ -18,30 +18,23 @@ import java.sql.Timestamp;
 
 import jp.drjoy.service.common.dto.DTO;
 
-
 public class SecUserRoleRstDto extends DTO<Serializable> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Long id;
-	private SecRole secRole;
+	private SecRoleRstDto secRole;
 
-	public SecRole getSecRole() {
+	public SecRoleRstDto getSecRole() {
 		return secRole;
 	}
 
-	public void setSecRole(SecRole secRole) {
+	public void setSecRole(SecRoleRstDto secRole) {
 		this.secRole = secRole;
 	}
 
-	public Long getId() {
-		return id;
-	}
+	public static class SecRoleRstDto implements Serializable {
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+		private static final long serialVersionUID = 1L;
 
-	private static class SecRole {
 		private Long id;
 
 		private Timestamp createdTime;

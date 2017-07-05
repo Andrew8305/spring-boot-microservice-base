@@ -15,37 +15,37 @@ import jp.drjoy.service.common.repository.BaseRepository;
 import jp.drjoy.service.common.service.BaseService;
 import jp.drjoy.service.common.util.ListJson;
 
-public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends DTO<? extends Serializable>>
-		implements BaseService<BaseDto> {
+public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends DTO<? extends Serializable>, BaseRstDto extends DTO<? extends Serializable>>
+		implements BaseService<BaseDto, BaseRstDto> {
 
 	private static final long serialVersionUID = 1L;
 
 	public abstract BaseRepository<Entity, Long> getRepository();
 
-	public abstract BaseDto createBaseDto(Entity entity, Long size);
+	public abstract BaseRstDto createBaseDto(Entity entity, Long size);
 
-	public abstract Entity createEntity(BaseDto baseDtos);
+	public abstract Entity createEntity(BaseDto baseDto);
 
 	public abstract void updateEntity(Entity entity, BaseDto baseDtos) throws RuntimeException;
 
 	public static final Sort DEFAULT_SORT = new Sort(new Order(Direction.ASC, PO.COLUMNNAME_ID));
 
 	@Override
-	public ListJson<BaseDto> findAll() {
+	public ListJson<BaseRstDto> findAll() {
 
-		List<BaseDto> baseDtos = new ArrayList<BaseDto>();
+		List<BaseRstDto> baseDtos = new ArrayList<>();
 
 		List<Entity> entitys = getRepository().findAll(DEFAULT_SORT);
 		Long size = Long.valueOf(entitys.size());
 		for (Entity entity : entitys) {
 			baseDtos.add(createBaseDto(entity, size));
 		}
-		return new ListJson<BaseDto>(baseDtos, Long.valueOf(baseDtos.size()));
+		return new ListJson<BaseRstDto>(baseDtos, Long.valueOf(baseDtos.size()));
 	}
 
 	// FINDONE
 	@Override
-	public BaseDto findOne(Object _id) {
+	public BaseRstDto findOne(Object _id) {
 
 		Long id = parse(_id, null);
 		if (id == null) {

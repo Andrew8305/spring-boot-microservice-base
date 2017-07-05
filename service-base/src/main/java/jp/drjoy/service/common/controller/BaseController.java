@@ -27,7 +27,7 @@ import jp.drjoy.service.common.util.Meta;
  *
  * @param <BaseDto> the generic type
  */
-public abstract class BaseController<BaseDto extends DTO<? extends Serializable>> implements Serializable {
+public abstract class BaseController<BaseDto extends DTO<? extends Serializable>, BaseRstDto extends DTO<? extends Serializable>> implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -37,7 +37,7 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 *
 	 * @return the service
 	 */
-	protected abstract BaseService<BaseDto> getService();
+	protected abstract BaseService<BaseDto, BaseRstDto> getService();
 
 	/** The value. */
 	HashMap<String, Object> value = new HashMap<String, Object>();
@@ -174,18 +174,18 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @return the response entity
 	 */
 	protected ResponseEntity<?> _findOne(Long id, HttpServletRequest request) {
-		BaseDto baseDto;
+		BaseRstDto baseRstDto;
 		HashMap<String, Object> value = new HashMap<String, Object>();
 		try {
-			baseDto = getService().findOne(id);
+			baseRstDto = getService().findOne(id);
 		} catch (RuntimeException e) {
 			return new ResponseEntity<Object>(value, HttpStatus.EXPECTATION_FAILED);
 		}
 
-		if (baseDto == null) {
+		if (baseRstDto == null) {
 			return new ResponseEntity<Object>(value, HttpStatus.EXPECTATION_FAILED);
 		}
-		return new Envelope(baseDto).toResponseEntity(HttpStatus.OK);
+		return new Envelope(baseRstDto).toResponseEntity(HttpStatus.OK);
 	}
 
 	/**
@@ -213,14 +213,14 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @return the response entity
 	 */
 	protected ResponseEntity<?> _findAll(HttpServletRequest request) {
-		ListJson<BaseDto> baseDtos;
+		ListJson<BaseRstDto> baseRstDtos;
 		HashMap<String, Object> value = new HashMap<String, Object>();
 		try {
-			baseDtos = getService().findAll();
+			baseRstDtos = getService().findAll();
 		} catch (RuntimeException e) {
 			return new ResponseEntity<Object>(value, HttpStatus.EXPECTATION_FAILED);
 		}
-		return new Envelope(baseDtos).toResponseEntity(HttpStatus.OK);
+		return new Envelope(baseRstDtos).toResponseEntity(HttpStatus.OK);
 	}
 
 }
