@@ -21,7 +21,6 @@ import jp.drjoy.service.common.service.impl.BaseServiceImpl;
 import jp.drjoy.service.common.util.BeanUtil;
 import jp.drjoy.service.registration.dto.form.UserRoleForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRoleRstDto;
-import jp.drjoy.service.registration.dto.rst.SecUserRoleRstDto.SecRoleRstDto;
 import jp.drjoy.service.registration.entity.SecUserRole;
 import jp.drjoy.service.registration.repository.SecUserRoleRepository;
 import jp.drjoy.service.registration.service.ISecUserRoleService;
@@ -43,7 +42,7 @@ public class SecUserRoleServiceImpl extends BaseServiceImpl<SecUserRole, UserRol
 	@Override
 	public SecUserRoleRstDto createBaseDto(SecUserRole entity, Long size) {
 		SecUserRoleRstDto simpleDto = (SecUserRoleRstDto) BeanUtil.createAndCopyPropertiesNative(entity, SecUserRoleRstDto.class);
-		simpleDto.setSecRole( (SecRoleRstDto) BeanUtil.createAndCopyPropertiesNative(entity.getSecRole(), SecUserRoleRstDto.SecRoleRstDto.class));
+		simpleDto.setSecRoleRstDto( (SecUserRoleRstDto.SecRoleRstDto) BeanUtil.createAndCopyPropertiesNative(entity.getSecRole(), SecUserRoleRstDto.SecRoleRstDto.class));
 		simpleDto.setCount(size);
 		return simpleDto;
 	}

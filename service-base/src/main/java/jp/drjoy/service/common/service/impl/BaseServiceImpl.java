@@ -43,7 +43,6 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 		return new ListJson<BaseRstDto>(baseDtos, Long.valueOf(baseDtos.size()));
 	}
 
-	// FINDONE
 	@Override
 	public BaseRstDto findOne(Object _id) {
 

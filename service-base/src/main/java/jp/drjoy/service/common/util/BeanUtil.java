@@ -40,8 +40,7 @@ public class BeanUtil {
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
-	public static Object createAndCopyPropertiesNative(Object source, Class c) {
+	public static Object createAndCopyPropertiesNative(Object source, Class<?> c) {
 		Object target = null;
 		try {
 			target = c.newInstance();
