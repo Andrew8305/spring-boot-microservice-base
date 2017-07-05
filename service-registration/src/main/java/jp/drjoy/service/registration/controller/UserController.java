@@ -19,22 +19,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jp.drjoy.service.common.controller.BaseController;
 import jp.drjoy.service.common.service.BaseService;
-import jp.drjoy.service.registration.dto.form.UserRoleForm;
-import jp.drjoy.service.registration.dto.rst.SecUserRoleRstDto;
-import jp.drjoy.service.registration.service.ISecUserRoleService;
+import jp.drjoy.service.registration.dto.form.SecUserForm;
+import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
+import jp.drjoy.service.registration.service.ISecUserService;
 
 @RestController
-@RequestMapping("userRole")
-public class UserRoleController extends BaseController<UserRoleForm, SecUserRoleRstDto> {
+@RequestMapping("user")
+public class UserController extends BaseController<SecUserForm, SecUserRstDto> {
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private ISecUserRoleService userRoleService;
+	private ISecUserService secUserService;
 
 	@Override
-	protected BaseService<UserRoleForm, SecUserRoleRstDto> getService() {
-		return userRoleService;
+	protected BaseService<SecUserForm, SecUserRstDto> getService() {
+		return secUserService;
 	}
 
 }

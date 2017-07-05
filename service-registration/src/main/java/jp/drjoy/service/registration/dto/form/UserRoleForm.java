@@ -11,7 +11,7 @@
 * OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 */
 
-package jp.drjoy.service.registration.dto.rst;
+package jp.drjoy.service.registration.dto.form;
 
 import java.io.Serializable;
 
@@ -20,7 +20,7 @@ import javax.persistence.Id;
 
 import jp.drjoy.service.common.dto.DTO;
 
-public class UserRoleRstDto extends DTO<Serializable> implements Serializable {
+public class UserRoleForm extends DTO<Serializable> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id

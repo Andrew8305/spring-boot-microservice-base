@@ -19,43 +19,43 @@ import org.springframework.stereotype.Service;
 import jp.drjoy.service.common.repository.BaseRepository;
 import jp.drjoy.service.common.service.impl.BaseServiceImpl;
 import jp.drjoy.service.common.util.BeanUtil;
-import jp.drjoy.service.registration.dto.rst.UserRoleRstDto;
-import jp.drjoy.service.registration.entity.UserRole;
-import jp.drjoy.service.registration.repository.UserRoleRepository;
-import jp.drjoy.service.registration.service.IUserRoleService;
+import jp.drjoy.service.registration.dto.form.SecUserForm;
+import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
+import jp.drjoy.service.registration.entity.SecUser;
+import jp.drjoy.service.registration.repository.SecUserRepository;
+import jp.drjoy.service.registration.service.ISecUserService;
 
-@Service("timesheetService")
-public class UserRoleServiceImpl extends BaseServiceImpl<UserRole, UserRoleRstDto> implements IUserRoleService {
+@Service
+public class SecUserServiceImpl extends BaseServiceImpl<SecUser, SecUserForm, SecUserRstDto> implements ISecUserService {
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private UserRoleRepository userRoleRepository;
+	private SecUserRepository userRepository;
 
 	@Override
-	public BaseRepository<UserRole, Long> getRepository() {
-		return userRoleRepository;
+	public BaseRepository<SecUser, Long> getRepository() {
+		return userRepository;
 	}
 
 	@Override
-	public UserRoleRstDto createBaseDto(UserRole entity, Long size) {
-		UserRoleRstDto simpleDto = new UserRoleRstDto();
+	public SecUserRstDto createBaseDto(SecUser entity, Long size) {
+		SecUserRstDto simpleDto = new SecUserRstDto();
 		BeanUtil.copyPropertiesNative(entity, simpleDto);
 		simpleDto.setCount(size);
 		return simpleDto;
 	}
 
 	@Override
-	public UserRole createEntity(UserRoleRstDto timesheetsDto) {
-		UserRole entity = new UserRole();
-		BeanUtil.copyPropertiesNative(timesheetsDto, entity);
+	public SecUser createEntity(SecUserForm userForm) {
+		SecUser entity = (SecUser) BeanUtil.createAndCopyPropertiesNative(userForm, SecUser.class);
 		return entity;
 	}
 
 	@Override
-	public void updateEntity(UserRole entity, UserRoleRstDto timesheetsDto) throws RuntimeException {
-		timesheetsDto.setId(entity.getId());
-		BeanUtil.copyPropertiesNative(timesheetsDto, entity);
+	public void updateEntity(SecUser entity, SecUserForm userForm) throws RuntimeException {
+		userForm.setId(entity.getId());
+		BeanUtil.copyPropertiesNative(userForm, entity);
 	}
 
 }
