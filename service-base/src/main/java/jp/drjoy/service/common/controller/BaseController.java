@@ -50,10 +50,10 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// CREATE
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public final ResponseEntity<?> create(@RequestBody @Valid BaseDto baseDto, BindingResult result,
-			HttpServletRequest request) {
+	public final ResponseEntity<?> create(@RequestBody @Valid BaseDto baseDto
+										, BindingResult result
+										, HttpServletRequest request) {
 
 		// msgListError
 		if (!FormError.bindingResult(result).isEmpty()) {
@@ -72,10 +72,11 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// UPDATE
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public final ResponseEntity<?> update(@PathVariable Long id, @RequestBody @Valid BaseDto baseDto,
-			BindingResult result, HttpServletRequest request) {
+	public final ResponseEntity<?> update(@PathVariable Long id
+										, @RequestBody @Valid BaseDto baseDto
+										, BindingResult result
+										, HttpServletRequest request) {
 
 		// msgListError
 		if (!FormError.bindingResult(result).isEmpty()) {
@@ -92,7 +93,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// FINDONE
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public final ResponseEntity<?> findOne(@PathVariable Long id, HttpServletRequest request) {
 		return _findOne(id, request);
@@ -105,7 +105,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// DELETE
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public final ResponseEntity<?> delete(@PathVariable Long id, HttpServletRequest request) {
 		return _delete(id, request);
@@ -117,7 +116,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// FINDALL
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public final ResponseEntity<?> findAll(HttpServletRequest request) {
 		return _findAll(request);
@@ -130,7 +128,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// CREATE
 	protected ResponseEntity<?> _create(BaseDto baseDto, HttpServletRequest request) {
 		String entityId;
 		HashMap<String, Object> value = new HashMap<String, Object>();
@@ -154,7 +151,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// UPDATE
 	protected ResponseEntity<?> _update(Long id, BaseDto baseDto, HttpServletRequest request) {
 		String entityId;
 		HashMap<String, Object> value = new HashMap<String, Object>();
@@ -177,7 +173,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// FINDONE
 	protected ResponseEntity<?> _findOne(Long id, HttpServletRequest request) {
 		BaseDto baseDto;
 		HashMap<String, Object> value = new HashMap<String, Object>();
@@ -200,7 +195,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// DELETE
 	protected ResponseEntity<?> _delete(Long id, HttpServletRequest request) {
 		HashMap<String, Object> value = new HashMap<String, Object>();
 		try {
@@ -218,7 +212,6 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * @param request the request
 	 * @return the response entity
 	 */
-	// FINDALL
 	protected ResponseEntity<?> _findAll(HttpServletRequest request) {
 		ListJson<BaseDto> baseDtos;
 		HashMap<String, Object> value = new HashMap<String, Object>();

@@ -28,6 +28,7 @@
 		<commons-lang.version>3.0</commons-lang.version>
 		<commons-beanutils.version>1.8.0</commons-beanutils.version>
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+		<postgresql.version>9.4-1206-jdbc42</postgresql.version>
 	</properties>
 
 	<dependencies>
@@ -60,11 +61,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-<!-- commons-beanutils - Copy properties -->
+		<!-- commons-beanutils - Copy properties -->
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>${commons-beanutils.version}</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+		<!-- postgresql driver -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<!-- drjoy -->
 		<dependency>
@@ -87,9 +94,7 @@
 			<artifactId>protobuf-gen</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
-		
-		
+
 		<!-- k.sumi: gRPCのLibrary-1.4.0を使用する場合は必須 -->
 		<dependency>
 			<groupId>io.netty</groupId>
@@ -123,7 +128,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.2</version>
+			<version>1.16.2</version><!--$NO-MVN-MAN-VER$-->
 			<scope>provided</scope>
 		</dependency>
 

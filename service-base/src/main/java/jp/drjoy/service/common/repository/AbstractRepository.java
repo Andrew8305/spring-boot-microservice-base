@@ -65,7 +65,7 @@ import org.springframework.data.repository.support.PageableExecutionUtils.TotalS
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
-public abstract class BaseSimpleJpaRepository<T, ID extends Serializable> {
+public abstract class AbstractRepository<T, ID extends Serializable> {
 
 	private static final String ID_MUST_NOT_BE_NULL = "The given id must not be null!";
 
@@ -80,9 +80,6 @@ public abstract class BaseSimpleJpaRepository<T, ID extends Serializable> {
 
 	private PersistenceProvider provider;
 
-	static {
-		System.out.println("hello");
-	}
 	public void setRepositoryMethodMetadata(CrudMethodMetadata crudMethodMetadata) {
 		this.metadata = crudMethodMetadata;
 	}
@@ -92,7 +89,7 @@ public abstract class BaseSimpleJpaRepository<T, ID extends Serializable> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public BaseSimpleJpaRepository() {
+	public AbstractRepository() {
 
 		if (this.domainClass == null) {
 			Class<?> superClazz = getClass();
@@ -105,7 +102,7 @@ public abstract class BaseSimpleJpaRepository<T, ID extends Serializable> {
 			ParameterizedType genericSuperclass = (ParameterizedType) superType;
 			this.domainClass = (Class<T>) genericSuperclass.getActualTypeArguments()[paraIndex++];
 		}
-		
+
 	}
 
 	public EntityManager getEntityManager() {
@@ -248,7 +245,8 @@ public abstract class BaseSimpleJpaRepository<T, ID extends Serializable> {
 	public Page<T> findAll(Specification<T> spec, Pageable pageable) {
 
 		TypedQuery<T> query = getQuery(spec, pageable);
-		return pageable == null ? new PageImpl<T>(query.getResultList()) : readPage(query, this.domainClass, pageable, spec);
+		return pageable == null ? new PageImpl<T>(query.getResultList())
+				: readPage(query, this.domainClass, pageable, spec);
 	}
 
 	protected <S extends T> Page<S> readPage(TypedQuery<S> query, final Class<S> domainClass, Pageable pageable,

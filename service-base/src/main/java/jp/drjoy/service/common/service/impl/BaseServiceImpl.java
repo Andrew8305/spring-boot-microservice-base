@@ -18,9 +18,6 @@ import jp.drjoy.service.common.util.ListJson;
 public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends DTO<? extends Serializable>>
 		implements BaseService<BaseDto> {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public abstract BaseRepository<Entity, Long> getRepository();
@@ -33,7 +30,6 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 
 	public static final Sort DEFAULT_SORT = new Sort(new Order(Direction.ASC, PO.COLUMNNAME_ID));
 
-	// FINDALL
 	@Override
 	public ListJson<BaseDto> findAll() {
 
