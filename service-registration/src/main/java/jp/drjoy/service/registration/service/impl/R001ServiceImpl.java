@@ -11,13 +11,24 @@
 * OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 */
 
-package jp.drjoy.service.registration.dto.dxo;
+package jp.drjoy.service.registration.service.impl;
 
-import java.io.Serializable;
+import java.util.List;
 
-import jp.drjoy.service.common.dto.DTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class SecUserDxoDto extends DTO<Serializable> implements Serializable {
+import jp.drjoy.service.registration.entity.SecUser;
+import jp.drjoy.service.registration.repository.ISecUserRepository;
+import jp.drjoy.service.registration.service.IR001Service;
 
-	private static final long serialVersionUID = 1L;
+@Service
+public class R001ServiceImpl implements IR001Service {
+
+	@Autowired
+	private ISecUserRepository secUserRepository;
+
+	public List<SecUser> getAllSecUser(){
+		return secUserRepository.findAll();
+	}
 }

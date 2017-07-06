@@ -11,13 +11,14 @@
 * OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
 */
 
-package jp.drjoy.service.registration.dto.dxo;
+package jp.drjoy.service.registration.dto.prm;
 
 import java.io.Serializable;
 
 import jp.drjoy.service.common.dto.DTO;
 
-public class SecUserDxoDto extends DTO<Serializable> implements Serializable {
+public class R001Prm extends DTO<Serializable> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 }

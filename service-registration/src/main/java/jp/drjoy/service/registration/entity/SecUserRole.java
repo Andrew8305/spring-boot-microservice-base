@@ -1,11 +1,19 @@
 package jp.drjoy.service.registration.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jp.drjoy.service.common.dto.PO;
-
-import java.sql.Timestamp;
 
 
 /**
@@ -97,6 +105,7 @@ public class SecUserRole extends PO<Long> implements Serializable {
 		this.lastUpdatedTime = lastUpdatedTime;
 	}
 
+	
 	public SecRole getSecRole() {
 		return this.secRole;
 	}
@@ -104,7 +113,7 @@ public class SecUserRole extends PO<Long> implements Serializable {
 	public void setSecRole(SecRole secRole) {
 		this.secRole = secRole;
 	}
-
+	@JsonIgnore
 	public SecUser getSecUser() {
 		return this.secUser;
 	}

@@ -22,7 +22,7 @@ import jp.drjoy.service.common.util.BeanUtil;
 import jp.drjoy.service.registration.dto.form.SecUserForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
 import jp.drjoy.service.registration.entity.SecUser;
-import jp.drjoy.service.registration.repository.SecUserRepository;
+import jp.drjoy.service.registration.repository.ISecUserRepository;
 import jp.drjoy.service.registration.service.ISecUserService;
 
 @Service
@@ -31,7 +31,7 @@ public class SecUserServiceImpl extends BaseServiceImpl<SecUser, SecUserForm, Se
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private SecUserRepository userRepository;
+	private ISecUserRepository userRepository;
 
 	@Override
 	public BaseRepository<SecUser, Long> getRepository() {

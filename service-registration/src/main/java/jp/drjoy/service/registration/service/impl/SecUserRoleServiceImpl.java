@@ -22,7 +22,7 @@ import jp.drjoy.service.common.util.BeanUtil;
 import jp.drjoy.service.registration.dto.form.UserRoleForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRoleRstDto;
 import jp.drjoy.service.registration.entity.SecUserRole;
-import jp.drjoy.service.registration.repository.SecUserRoleRepository;
+import jp.drjoy.service.registration.repository.ISecUserRoleRepository;
 import jp.drjoy.service.registration.service.ISecUserRoleService;
 
 
@@ -32,7 +32,7 @@ public class SecUserRoleServiceImpl extends BaseServiceImpl<SecUserRole, UserRol
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private SecUserRoleRepository userRoleRepository;
+	private ISecUserRoleRepository userRoleRepository;
 
 	@Override
 	public BaseRepository<SecUserRole, Long> getRepository() {
