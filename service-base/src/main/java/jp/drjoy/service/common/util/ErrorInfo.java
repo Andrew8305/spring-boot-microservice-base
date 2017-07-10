@@ -1,12 +1,7 @@
 package jp.drjoy.service.common.util;
 
-/*******************************************************************************
- * •Copyright 2017 Panasonic Healthcare Co., Ltd. All rights reserved.
- ******************************************************************************/
-
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class ErrorInfo.
  */

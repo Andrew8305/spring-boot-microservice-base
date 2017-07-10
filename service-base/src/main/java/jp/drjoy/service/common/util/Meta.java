@@ -3,26 +3,26 @@ package jp.drjoy.service.common.util;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Meta {
-    
-    public static final Meta OK = new Meta(200);
 
-    @JsonProperty("code")
-    int code;
+	public static final Meta OK = new Meta(200);
 
-    public Meta() {
-        super();
-    }
+	@JsonProperty("code")
+	int code;
 
-    public Meta(int code) {
-        super();
-        this.code = code;
-    }
+	public Meta() {
+		super();
+	}
 
-    public int getCode() {
-        return code;
-    }
+	public Meta(int code) {
+		super();
+		this.code = code;
+	}
 
-    public void setCode(int code) {
-        this.code = code;
-    }
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
 }

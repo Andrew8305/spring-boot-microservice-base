@@ -21,10 +21,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-/**
- * @author toitd
- * @version 1.0
- */
 public class DataUtil {
 
 	private static final String PHONE_PATTERN = "^[0-9]*$";
