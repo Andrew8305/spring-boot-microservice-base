@@ -11,7 +11,6 @@ import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.domain.Persistable;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class PO.
  *

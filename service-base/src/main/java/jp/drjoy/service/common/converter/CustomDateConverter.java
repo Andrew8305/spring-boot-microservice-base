@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.beanutils.Converter;
 import org.apache.commons.lang3.StringUtils;
 
-import jp.drjoy.service.common.constant.Constant;
+import jp.drjoy.service.common.constant.Const;
 
 /**
  * Conversion to Date type
@@ -20,7 +20,7 @@ public final class CustomDateConverter implements Converter {
 			return null;
 		} else if (value instanceof String) {
 			if (StringUtils.isNotBlank(value.toString())) {
-				SimpleDateFormat sdf = new SimpleDateFormat(Constant.DATE_FORMAT_DD_MM_YYYY);
+				SimpleDateFormat sdf = new SimpleDateFormat(Const.DATE_FORMAT_DDMMYYYY);
 				try {
 					return sdf.parse(value.toString());
 				} catch (ParseException e) {

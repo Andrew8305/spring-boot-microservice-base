@@ -12,7 +12,6 @@ public class ConvertDate {
 		try {
 			dateFormat = formatter.parse(date);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return dateFormat;

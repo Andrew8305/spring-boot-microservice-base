@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jp.drjoy.service.common.controller.impl.BaseControllerImpl;
 import jp.drjoy.service.common.dto.DTO;
 import jp.drjoy.service.common.dto.IdDto;
 import jp.drjoy.service.common.service.BaseService;
+import jp.drjoy.service.common.util.BeanUtil;
 import jp.drjoy.service.common.util.Envelope;
 import jp.drjoy.service.common.util.FormError;
 import jp.drjoy.service.common.util.ListJson;
@@ -25,19 +27,21 @@ import jp.drjoy.service.common.util.Meta;
 /**
  * The Class BaseController.
  *
- * @param <BaseDto> the generic type
+ * @param <baseForm> the generic type
  */
-public abstract class BaseController<BaseDto extends DTO<? extends Serializable>, BaseRstDto extends DTO<? extends Serializable>> implements Serializable {
+public abstract class BasicController<BaseForm extends DTO<? extends Serializable>, BaseDxoDto extends DTO<? extends Serializable>, BaseRstDto extends DTO<? extends Serializable>> extends BaseControllerImpl implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+
+	protected abstract Class<BaseDxoDto> getClassOfBaseDxo();
 
 	/**
 	 * Gets the service.
 	 *
 	 * @return the service
 	 */
-	protected abstract BaseService<BaseDto, BaseRstDto> getService();
+	protected abstract BaseService<BaseForm, BaseDxoDto, BaseRstDto> getService();
 
 	/** The value. */
 	HashMap<String, Object> value = new HashMap<String, Object>();
@@ -45,13 +49,13 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	/**
 	 * Creates the.
 	 *
-	 * @param baseDto the base dto
+	 * @param baseForm the base dto
 	 * @param result the result
 	 * @param request the request
 	 * @return the response entity
 	 */
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public final ResponseEntity<?> create(@RequestBody @Valid BaseDto baseDto
+	public final ResponseEntity<?> create(@RequestBody @Valid BaseForm baseForm
 										, BindingResult result
 										, HttpServletRequest request) {
 
@@ -59,22 +63,21 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 		if (!FormError.bindingResult(result).isEmpty()) {
 			return new ResponseEntity<Object>(FormError.bindingResult(result), HttpStatus.EXPECTATION_FAILED);
 		}
-
-		return _create(baseDto, request);
+		return _create(baseForm, request);
 	}
 
 	/**
 	 * Update.
 	 *
 	 * @param id the id
-	 * @param baseDto the base dto
+	 * @param baseForm the base dto
 	 * @param result the result
 	 * @param request the request
 	 * @return the response entity
 	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public final ResponseEntity<?> update(@PathVariable Long id
-										, @RequestBody @Valid BaseDto baseDto
+										, @RequestBody @Valid BaseForm baseForm
 										, BindingResult result
 										, HttpServletRequest request) {
 
@@ -83,7 +86,7 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 			return new ResponseEntity<Object>(FormError.bindingResult(result), HttpStatus.EXPECTATION_FAILED);
 		}
 
-		return _update(id, baseDto, request);
+		return _update(id, baseForm, request);
 	}
 
 	/**
@@ -124,15 +127,17 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	/**
 	 * Creates the.
 	 *
-	 * @param baseDto the base dto
+	 * @param baseForm the base dto
 	 * @param request the request
 	 * @return the response entity
 	 */
-	protected ResponseEntity<?> _create(BaseDto baseDto, HttpServletRequest request) {
+	protected ResponseEntity<?> _create(BaseForm baseForm, HttpServletRequest request) {
 		String entityId;
 		HashMap<String, Object> value = new HashMap<String, Object>();
 		try {
-			entityId = getService().create(baseDto);
+			@SuppressWarnings("unchecked")
+			BaseDxoDto baseDxoDto = (BaseDxoDto) BeanUtil.createAndCopyPropertiesNative(baseForm, getClassOfBaseDxo());
+			entityId = getService().create(baseDxoDto);
 		} catch (RuntimeException e) {
 			return new ResponseEntity<Object>(value, HttpStatus.EXPECTATION_FAILED);
 		}
@@ -147,15 +152,17 @@ public abstract class BaseController<BaseDto extends DTO<? extends Serializable>
 	 * Update.
 	 *
 	 * @param id the id
-	 * @param baseDto the base dto
+	 * @param baseForm the base dto
 	 * @param request the request
 	 * @return the response entity
 	 */
-	protected ResponseEntity<?> _update(Long id, BaseDto baseDto, HttpServletRequest request) {
+	protected ResponseEntity<?> _update(Long id, BaseForm baseForm, HttpServletRequest request) {
 		String entityId;
 		HashMap<String, Object> value = new HashMap<String, Object>();
 		try {
-			entityId = getService().update(id, baseDto);
+			@SuppressWarnings("unchecked")
+			BaseDxoDto baseDxoDto = (BaseDxoDto) BeanUtil.createAndCopyPropertiesNative(baseForm, getClassOfBaseDxo());
+			entityId = getService().update(id, baseDxoDto);
 		} catch (RuntimeException e) {
 			return new ResponseEntity<Object>(value, HttpStatus.EXPECTATION_FAILED);
 		}

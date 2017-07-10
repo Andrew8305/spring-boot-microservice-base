@@ -15,8 +15,11 @@ import jp.drjoy.service.common.repository.BaseRepository;
 import jp.drjoy.service.common.service.BaseService;
 import jp.drjoy.service.common.util.ListJson;
 
-public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends DTO<? extends Serializable>, BaseRstDto extends DTO<? extends Serializable>>
-		implements BaseService<BaseDto, BaseRstDto> {
+public abstract class BaseServiceImpl<Entity extends PO<Long>
+									, BaseForm extends DTO<? extends Serializable>
+									, BaseDxoDto extends DTO<? extends Serializable>
+									, BaseRstDto extends DTO<? extends Serializable>>
+						implements BaseService<BaseForm, BaseDxoDto, BaseRstDto> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -24,9 +27,9 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 
 	public abstract BaseRstDto createBaseDto(Entity entity, Long size);
 
-	public abstract Entity createEntity(BaseDto baseDto);
+	public abstract Entity createEntity(BaseDxoDto baseDxoDto);
 
-	public abstract void updateEntity(Entity entity, BaseDto baseDtos) throws RuntimeException;
+	public abstract void updateEntity(Entity entity, BaseDxoDto baseDxoDto) throws RuntimeException;
 
 	public static final Sort DEFAULT_SORT = new Sort(new Order(Direction.ASC, PO.COLUMNNAME_ID));
 
@@ -57,11 +60,10 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 		return createBaseDto(entity, 1L);
 	}
 
-	// CREATE
 	@Override
-	public String create(BaseDto baseDto) {
+	public String create(BaseDxoDto baseDxoDto) {
 
-		Entity entity = createEntity(baseDto);
+		Entity entity = createEntity(baseDxoDto);
 		if (entity == null) {
 			throw new RuntimeException();
 		}
@@ -73,9 +75,8 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 		return entity.getId().toString();
 	}
 
-	// UPDATE
 	@Override
-	public String update(Object _id, BaseDto baseDto) throws RuntimeException {
+	public String update(Object _id, BaseDxoDto baseDxoDto) throws RuntimeException {
 		Long id = parse(_id, null);
 		if (id == null) {
 			throw new RuntimeException();
@@ -85,12 +86,11 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 		if (entity == null) {
 			throw new RuntimeException();
 		}
-		updateEntity(entity, baseDto);
+		updateEntity(entity, baseDxoDto);
 		entity = getRepository().save(entity);
 		return entity.getId().toString();
 	}
 
-	// DELETE
 	@Override
 	public void delete(Object _id) {
 
@@ -105,24 +105,24 @@ public abstract class BaseServiceImpl<Entity extends PO<Long>, BaseDto extends D
 		}
 	}
 
-	protected ListJson<BaseDto> paging(Integer page, Integer size, List<BaseDto> list) {
+	protected ListJson<BaseRstDto> paging(Integer page, Integer size, List<BaseRstDto> list) {
 		long resultSize = list.size();
 
-		List<BaseDto> listAfterPagingDto = new ArrayList<BaseDto>();
+		List<BaseRstDto> listAfterPagingDto = new ArrayList<BaseRstDto>();
 
 		if (page != null && size != null && size > 0) {
 			int begin = page * size;
 			int end = page * size + size;
 
 			if (begin > resultSize)
-				return new ListJson<BaseDto>(listAfterPagingDto, resultSize);
+				return new ListJson<BaseRstDto>(listAfterPagingDto, resultSize);
 			else if (end > resultSize) {
 				end = (int) resultSize;
 			}
 			listAfterPagingDto = list.subList(begin, end);
 		} else
-			return new ListJson<BaseDto>(list, resultSize);
-		return new ListJson<BaseDto>(listAfterPagingDto, resultSize);
+			return new ListJson<BaseRstDto>(list, resultSize);
+		return new ListJson<BaseRstDto>(listAfterPagingDto, resultSize);
 	}
 
 	public Long parse(Object value, Long defaultValue) {
