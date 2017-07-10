@@ -1,36 +1,19 @@
-/**
-* Copyright (c) Acroquest Technology Co., Ltd. All Rights Reserved.
-* Please read the associated COPYRIGHTS file for more details.
-*
-* THE SOFTWARE IS PROVIDED BY Acroquest Technology Co., Ltd.,
-* WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
-* BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDER BE LIABLE FOR ANY
-* CLAIM, DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
-* OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
-*/
-
 package jp.drjoy.service.registration.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import jp.drjoy.service.common.controller.BaseController;
+import jp.drjoy.service.common.controller.BasicController;
 import jp.drjoy.service.common.service.BaseService;
+import jp.drjoy.service.registration.dto.dxo.SecUserDxoDto;
 import jp.drjoy.service.registration.dto.form.SecUserForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
 import jp.drjoy.service.registration.service.ISecUserService;
 
 @RestController
 @RequestMapping("user")
-public class UserController extends BaseController<SecUserForm, SecUserRstDto> {
+public class UserController extends BasicController<SecUserForm, SecUserDxoDto, SecUserRstDto> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,13 +21,13 @@ public class UserController extends BaseController<SecUserForm, SecUserRstDto> {
 	private ISecUserService secUserService;
 
 	@Override
-	protected BaseService<SecUserForm, SecUserRstDto> getService() {
+	protected BaseService<SecUserForm, SecUserDxoDto, SecUserRstDto> getService() {
 		return secUserService;
 	}
 
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	public final ResponseEntity<String> add(HttpServletRequest request) {
-		
-		return new ResponseEntity<>("hello", HttpStatus.OK);
+	@Override
+	protected Class<SecUserDxoDto> getClassOfBaseDxo() {
+		return SecUserDxoDto.class;
 	}
+
 }

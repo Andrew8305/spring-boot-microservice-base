@@ -5,5 +5,4 @@ import jp.drjoy.service.registration.entity.SecUserRole;
 
 public interface ISecUserRoleRepository extends BaseRepository<SecUserRole, Long> {
 
-
 }

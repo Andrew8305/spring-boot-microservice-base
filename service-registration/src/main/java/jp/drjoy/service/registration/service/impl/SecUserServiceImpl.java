@@ -1,16 +1,3 @@
-/**
-* Copyright (c) Acroquest Technology Co., Ltd. All Rights Reserved.
-* Please read the associated COPYRIGHTS file for more details.
-*
-* THE SOFTWARE IS PROVIDED BY Acroquest Technology Co., Ltd.,
-* WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
-* BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDER BE LIABLE FOR ANY
-* CLAIM, DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
-* OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
-*/
-
 package jp.drjoy.service.registration.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +6,7 @@ import org.springframework.stereotype.Service;
 import jp.drjoy.service.common.repository.BaseRepository;
 import jp.drjoy.service.common.service.impl.BaseServiceImpl;
 import jp.drjoy.service.common.util.BeanUtil;
+import jp.drjoy.service.registration.dto.dxo.SecUserDxoDto;
 import jp.drjoy.service.registration.dto.form.SecUserForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
 import jp.drjoy.service.registration.entity.SecUser;
@@ -26,7 +14,7 @@ import jp.drjoy.service.registration.repository.ISecUserRepository;
 import jp.drjoy.service.registration.service.ISecUserService;
 
 @Service
-public class SecUserServiceImpl extends BaseServiceImpl<SecUser, SecUserForm, SecUserRstDto> implements ISecUserService {
+public class SecUserServiceImpl extends BaseServiceImpl<SecUser, SecUserForm, SecUserDxoDto, SecUserRstDto> implements ISecUserService {
 
 	private static final long serialVersionUID = 1L;
 
@@ -47,15 +35,15 @@ public class SecUserServiceImpl extends BaseServiceImpl<SecUser, SecUserForm, Se
 	}
 
 	@Override
-	public SecUser createEntity(SecUserForm userForm) {
-		SecUser entity = (SecUser) BeanUtil.createAndCopyPropertiesNative(userForm, SecUser.class);
+	public SecUser createEntity(SecUserDxoDto baseDxoDto) {
+		SecUser entity = (SecUser) BeanUtil.createAndCopyPropertiesNative(baseDxoDto, SecUser.class);
 		return entity;
 	}
 
 	@Override
-	public void updateEntity(SecUser entity, SecUserForm userForm) throws RuntimeException {
-		userForm.setId(entity.getId());
-		BeanUtil.copyPropertiesNative(userForm, entity);
+	public void updateEntity(SecUser entity, SecUserDxoDto baseDxoDto) throws RuntimeException {
+		baseDxoDto.setId(entity.getId());
+		BeanUtil.copyPropertiesNative(baseDxoDto, entity);
 	}
 
 }

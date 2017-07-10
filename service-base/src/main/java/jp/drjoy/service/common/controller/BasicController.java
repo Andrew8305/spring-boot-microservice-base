@@ -29,7 +29,10 @@ import jp.drjoy.service.common.util.Meta;
  *
  * @param <baseForm> the generic type
  */
-public abstract class BasicController<BaseForm extends DTO<? extends Serializable>, BaseDxoDto extends DTO<? extends Serializable>, BaseRstDto extends DTO<? extends Serializable>> extends BaseControllerImpl implements Serializable {
+public abstract class BasicController<BaseForm extends DTO<? extends Serializable>
+									, BaseDxoDto extends DTO<? extends Serializable>
+									, BaseRstDto extends DTO<? extends Serializable>> 
+						extends BaseControllerImpl implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
