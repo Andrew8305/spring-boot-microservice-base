@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="drjoy-service-base (1)" />
+        <module name="maven-archiver (3)" />
+        <module name="model (1)" />
+        <module name="service-calendar (1)" />
+        <module name="service-central (1)" />
+        <module name="service-chat (1)" />
+        <module name="service-config (1)" />
+        <module name="service-gateway (1)" />
+        <module name="service-group (1)" />
+        <module name="service-grpc-starter" />
+        <module name="service-grpc-starter (1)" />
+        <module name="service-grpc-starter-example" />
+        <module name="service-meeting (1)" />
+        <module name="service-mobile-front (1)" />
+        <module name="service-monitor (1)" />
+        <module name="service-push-notification (1)" />
+        <module name="service-registration (1)" />
+        <module name="service-template (1)" />
+        <module name="service-web-front (1)" />
+      </profile>
+      <profile name="Annotation profile for service-monitor" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-monitor" />
+      </profile>
+      <profile name="Annotation profile for Unknown" enabled="true">
+        <sourceOutputDir name="../generated-sources/annotations" />
+        <sourceTestOutputDir name="../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="maven-archiver (1)" />
+        <module name="maven-archiver (2)" />
+        <module name="maven-archiver (4)" />
+      </profile>
+      <profile name="Annotation profile for service-template" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-template" />
+      </profile>
+      <profile name="Annotation profile for service-chat" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-chat" />
+      </profile>
+      <profile name="Annotation profile for service-central" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-central" />
+      </profile>
+      <profile name="Annotation profile for service-push-notification" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-push-notification" />
+      </profile>
+      <profile name="Annotation profile for service-registration" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-registration" />
+      </profile>
+      <profile name="Annotation profile for service-web-front" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-web-front" />
+      </profile>
+      <profile name="Annotation profile for service-framework" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-framework" />
+      </profile>
+      <profile name="Annotation profile for model" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="model" />
+      </profile>
+      <profile name="Annotation profile for service-meeting" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-meeting" />
+      </profile>
+      <profile name="Annotation profile for service-calendar" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-calendar" />
+      </profile>
+      <profile name="Annotation profile for drjoy-service-base" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="drjoy-service-base" />
+      </profile>
+      <profile name="Annotation profile for service-config" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-config" />
+      </profile>
+      <profile name="Annotation profile for service-gateway" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-gateway" />
+      </profile>
+      <profile name="Annotation profile for service-mobile-front" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-mobile-front" />
+      </profile>
+      <profile name="Annotation profile for service-group" enabled="true">
+        <sourceOutputDir name="../../../../../generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../../../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-group" />
+      </profile>
+      <profile name="Annotation profile for service-framework (1)" enabled="true">
+        <sourceOutputDir name="target/classes/META-INF/maven/jp.drjoy.service/service-framework/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/classes/META-INF/maven/jp.drjoy.service/service-framework/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-framework (1)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="drjoy-incubator" target="1.5" />
+      <module name="drjoy-service-base" target="1.5" />
+      <module name="drjoy-service-base (1)" target="1.8" />
+      <module name="drjoy-service-base (2)" target="1.8" />
+      <module name="drjoy-service-base (3)" target="1.8" />
+      <module name="maven-archiver (1)" target="1.5" />
+      <module name="maven-archiver (2)" target="1.5" />
+      <module name="maven-archiver (3)" target="1.5" />
+      <module name="maven-archiver (4)" target="1.5" />
+      <module name="model" target="1.5" />
+      <module name="model (1)" target="1.8" />
+      <module name="model (2)" target="1.8" />
+      <module name="model (3)" target="1.8" />
+      <module name="service-calendar" target="1.5" />
+      <module name="service-calendar (1)" target="1.8" />
+      <module name="service-calendar (2)" target="1.5" />
+      <module name="service-calendar (3)" target="1.8" />
+      <module name="service-central" target="1.5" />
+      <module name="service-central (1)" target="1.8" />
+      <module name="service-central (2)" target="1.5" />
+      <module name="service-central (3)" target="1.8" />
+      <module name="service-chat" target="1.5" />
+      <module name="service-chat (1)" target="1.8" />
+      <module name="service-chat (2)" target="1.5" />
+      <module name="service-chat (3)" target="1.8" />
+      <module name="service-config" target="1.5" />
+      <module name="service-config (1)" target="1.8" />
+      <module name="service-config (2)" target="1.5" />
+      <module name="service-config (3)" target="1.8" />
+      <module name="service-framework" target="1.5" />
+      <module name="service-framework (1)" target="1.8" />
+      <module name="service-framework (2)" target="1.5" />
+      <module name="service-framework (3)" target="1.8" />
+      <module name="service-gateway" target="1.5" />
+      <module name="service-gateway (1)" target="1.8" />
+      <module name="service-gateway (2)" target="1.8" />
+      <module name="service-gateway (3)" target="1.8" />
+      <module name="service-group" target="1.5" />
+      <module name="service-group (1)" target="1.8" />
+      <module name="service-group (2)" target="1.5" />
+      <module name="service-group (3)" target="1.8" />
+      <module name="service-grpc-starter" target="1.5" />
+      <module name="service-grpc-starter (1)" target="1.8" />
+      <module name="service-grpc-starter (2)" target="1.5" />
+      <module name="service-grpc-starter (3)" target="1.8" />
+      <module name="service-grpc-starter-example" target="1.5" />
+      <module name="service-meeting" target="1.5" />
+      <module name="service-meeting (1)" target="1.8" />
+      <module name="service-meeting (2)" target="1.5" />
+      <module name="service-meeting (3)" target="1.8" />
+      <module name="service-mobile-front" target="1.5" />
+      <module name="service-mobile-front (1)" target="1.8" />
+      <module name="service-mobile-front (2)" target="1.8" />
+      <module name="service-mobile-front (3)" target="1.8" />
+      <module name="service-monitor" target="1.5" />
+      <module name="service-monitor (1)" target="1.8" />
+      <module name="service-monitor (2)" target="1.8" />
+      <module name="service-monitor (3)" target="1.8" />
+      <module name="service-push-notification" target="1.5" />
+      <module name="service-push-notification (1)" target="1.8" />
+      <module name="service-push-notification (2)" target="1.5" />
+      <module name="service-push-notification (3)" target="1.8" />
+      <module name="service-registration" target="1.5" />
+      <module name="service-registration (1)" target="1.8" />
+      <module name="service-registration (2)" target="1.8" />
+      <module name="service-registration (3)" target="1.8" />
+      <module name="service-template" target="1.5" />
+      <module name="service-template (1)" target="1.8" />
+      <module name="service-template (2)" target="1.5" />
+      <module name="service-template (3)" target="1.8" />
+      <module name="service-web-front" target="1.5" />
+      <module name="service-web-front (1)" target="1.8" />
+      <module name="service-web-front (2)" target="1.5" />
+      <module name="service-web-front (3)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

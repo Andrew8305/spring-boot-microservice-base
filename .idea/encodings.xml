@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/model-mockup" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/model-mockup/target/classes/META-INF/maven/jp.drjoy.service/model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-base/target/classes/META-INF/maven/jp.drjoy.service/drjoy-service-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-calendar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-calendar/target/classes/META-INF/maven/jp.drjoy.service/service-calendar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-central" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-central/target/classes/META-INF/maven/jp.drjoy.service/service-central" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-chat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-chat/target/classes/META-INF/maven/jp.drjoy.service/service-chat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-config/target/classes/META-INF/maven/jp.drjoy.service/service-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-framework" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-framework/target/classes/META-INF/maven/jp.drjoy.service/service-framework" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-gateway/target/classes/META-INF/maven/jp.drjoy.service/service-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-group" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-group/target/classes/META-INF/maven/jp.drjoy.service/service-group" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-grpc-starter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-grpc-starter/target/classes/META-INF/maven/jp.drjoy.service.boot/service-grpc-starter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-meeting" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-meeting/target/classes/META-INF/maven/jp.drjoy.service/service-meeting" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-mobile-front" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-mobile-front/target/classes/META-INF/maven/jp.drjoy.service/service-mobile-front" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-monitor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-monitor/target/classes/META-INF/maven/jp.drjoy.service/service-monitor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-notification-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-notification-client/target/classes/META-INF/maven/jp.drjoy.service/service-push-notification" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-registration" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-registration/target/classes/META-INF/maven/jp.drjoy.service/service-registration" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-template" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-template/target/classes/META-INF/maven/jp.drjoy.service/service-template" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-web-front" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-web-front/target/classes/META-INF/maven/jp.drjoy.service/service-web-front" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/incubator/drjoy-incubator.iml" filepath="$PROJECT_DIR$/incubator/drjoy-incubator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-base/target/classes/META-INF/maven/jp.drjoy.service/drjoy-service-base/drjoy-service-base.iml" filepath="$PROJECT_DIR$/service-base/target/classes/META-INF/maven/jp.drjoy.service/drjoy-service-base/drjoy-service-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-base/drjoy-service-base (1).iml" filepath="$PROJECT_DIR$/service-base/drjoy-service-base (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-base/target/maven-archiver/maven-archiver (1).iml" filepath="$PROJECT_DIR$/service-base/target/maven-archiver/maven-archiver (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-framework/target/maven-archiver/maven-archiver (2).iml" filepath="$PROJECT_DIR$/service-framework/target/maven-archiver/maven-archiver (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-grpc-starter/target/maven-archiver/maven-archiver (3).iml" filepath="$PROJECT_DIR$/service-grpc-starter/target/maven-archiver/maven-archiver (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registration/target/maven-archiver/maven-archiver (4).iml" filepath="$PROJECT_DIR$/service-registration/target/maven-archiver/maven-archiver (4).iml" />
+      <module fileurl="file://$PROJECT_DIR$/model-mockup/target/classes/META-INF/maven/jp.drjoy.service/model/model.iml" filepath="$PROJECT_DIR$/model-mockup/target/classes/META-INF/maven/jp.drjoy.service/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model-mockup/model (1).iml" filepath="$PROJECT_DIR$/model-mockup/model (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-calendar/target/classes/META-INF/maven/jp.drjoy.service/service-calendar/service-calendar.iml" filepath="$PROJECT_DIR$/service-calendar/target/classes/META-INF/maven/jp.drjoy.service/service-calendar/service-calendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-calendar/service-calendar (1).iml" filepath="$PROJECT_DIR$/service-calendar/service-calendar (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-central/target/classes/META-INF/maven/jp.drjoy.service/service-central/service-central.iml" filepath="$PROJECT_DIR$/service-central/target/classes/META-INF/maven/jp.drjoy.service/service-central/service-central.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-central/service-central (1).iml" filepath="$PROJECT_DIR$/service-central/service-central (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-chat/target/classes/META-INF/maven/jp.drjoy.service/service-chat/service-chat.iml" filepath="$PROJECT_DIR$/service-chat/target/classes/META-INF/maven/jp.drjoy.service/service-chat/service-chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-chat/service-chat (1).iml" filepath="$PROJECT_DIR$/service-chat/service-chat (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-config/target/classes/META-INF/maven/jp.drjoy.service/service-config/service-config.iml" filepath="$PROJECT_DIR$/service-config/target/classes/META-INF/maven/jp.drjoy.service/service-config/service-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-config/service-config (1).iml" filepath="$PROJECT_DIR$/service-config/service-config (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-framework/target/classes/META-INF/maven/jp.drjoy.service/service-framework/service-framework.iml" filepath="$PROJECT_DIR$/service-framework/target/classes/META-INF/maven/jp.drjoy.service/service-framework/service-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-framework/service-framework (1).iml" filepath="$PROJECT_DIR$/service-framework/service-framework (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-gateway/target/classes/META-INF/maven/jp.drjoy.service/service-gateway/service-gateway.iml" filepath="$PROJECT_DIR$/service-gateway/target/classes/META-INF/maven/jp.drjoy.service/service-gateway/service-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-gateway/service-gateway (1).iml" filepath="$PROJECT_DIR$/service-gateway/service-gateway (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-group/target/classes/META-INF/maven/jp.drjoy.service/service-group/service-group.iml" filepath="$PROJECT_DIR$/service-group/target/classes/META-INF/maven/jp.drjoy.service/service-group/service-group.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-group/service-group (1).iml" filepath="$PROJECT_DIR$/service-group/service-group (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-grpc-starter/target/classes/META-INF/maven/jp.drjoy.service.boot/service-grpc-starter/service-grpc-starter.iml" filepath="$PROJECT_DIR$/service-grpc-starter/target/classes/META-INF/maven/jp.drjoy.service.boot/service-grpc-starter/service-grpc-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-grpc-starter/service-grpc-starter (1).iml" filepath="$PROJECT_DIR$/service-grpc-starter/service-grpc-starter (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-grpc-starter/example/service-grpc-starter-example.iml" filepath="$PROJECT_DIR$/service-grpc-starter/example/service-grpc-starter-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-meeting/target/classes/META-INF/maven/jp.drjoy.service/service-meeting/service-meeting.iml" filepath="$PROJECT_DIR$/service-meeting/target/classes/META-INF/maven/jp.drjoy.service/service-meeting/service-meeting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-meeting/service-meeting (1).iml" filepath="$PROJECT_DIR$/service-meeting/service-meeting (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-mobile-front/target/classes/META-INF/maven/jp.drjoy.service/service-mobile-front/service-mobile-front.iml" filepath="$PROJECT_DIR$/service-mobile-front/target/classes/META-INF/maven/jp.drjoy.service/service-mobile-front/service-mobile-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-mobile-front/service-mobile-front (1).iml" filepath="$PROJECT_DIR$/service-mobile-front/service-mobile-front (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-monitor/target/classes/META-INF/maven/jp.drjoy.service/service-monitor/service-monitor.iml" filepath="$PROJECT_DIR$/service-monitor/target/classes/META-INF/maven/jp.drjoy.service/service-monitor/service-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-monitor/service-monitor (1).iml" filepath="$PROJECT_DIR$/service-monitor/service-monitor (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-notification-client/target/classes/META-INF/maven/jp.drjoy.service/service-push-notification/service-push-notification.iml" filepath="$PROJECT_DIR$/service-notification-client/target/classes/META-INF/maven/jp.drjoy.service/service-push-notification/service-push-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-notification-client/service-push-notification (1).iml" filepath="$PROJECT_DIR$/service-notification-client/service-push-notification (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registration/target/classes/META-INF/maven/jp.drjoy.service/service-registration/service-registration.iml" filepath="$PROJECT_DIR$/service-registration/target/classes/META-INF/maven/jp.drjoy.service/service-registration/service-registration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registration/service-registration (1).iml" filepath="$PROJECT_DIR$/service-registration/service-registration (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-template/target/classes/META-INF/maven/jp.drjoy.service/service-template/service-template.iml" filepath="$PROJECT_DIR$/service-template/target/classes/META-INF/maven/jp.drjoy.service/service-template/service-template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-template/service-template (1).iml" filepath="$PROJECT_DIR$/service-template/service-template (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-web-front/target/classes/META-INF/maven/jp.drjoy.service/service-web-front/service-web-front.iml" filepath="$PROJECT_DIR$/service-web-front/target/classes/META-INF/maven/jp.drjoy.service/service-web-front/service-web-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-web-front/service-web-front (1).iml" filepath="$PROJECT_DIR$/service-web-front/service-web-front (1).iml" />
+    </modules>
+  </component>
+</project>

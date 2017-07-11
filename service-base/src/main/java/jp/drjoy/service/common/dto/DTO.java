@@ -16,33 +16,11 @@ public abstract class DTO<K extends Serializable> implements Serializable {
 	/** The id. */
 	protected K id;
 
-	/** The count. */
-	private Long count;
-
-	/**
-	 * Gets the count.
-	 *
-	 * @return the count
-	 */
-	public Long getCount() {
-		return count;
-	}
-
-	/**
-	 * Sets the count.
-	 *
-	 * @param count the new count
-	 */
-	public void setCount(Long count) {
-		this.count = count;
-	}
-
 	/**
 	 * Instantiates a new dto.
 	 */
 	public DTO() {
 		super();
-
 		this.id = null;
 	}
 
