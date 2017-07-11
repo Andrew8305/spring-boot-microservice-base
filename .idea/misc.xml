@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/incubator/pom.xml" />
+        <option value="$PROJECT_DIR$/model-mockup/target/classes/META-INF/maven/jp.drjoy.service/model/pom.properties" />
+        <option value="$PROJECT_DIR$/model-mockup/pom.xml" />
+        <option value="$PROJECT_DIR$/service-base/target/classes/META-INF/maven/jp.drjoy.service/drjoy-service-base/pom.properties" />
+        <option value="$PROJECT_DIR$/service-base/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/service-base/pom.xml" />
+        <option value="$PROJECT_DIR$/service-chat/target/classes/META-INF/maven/jp.drjoy.service/service-chat/pom.properties" />
+        <option value="$PROJECT_DIR$/service-chat/pom.xml" />
+        <option value="$PROJECT_DIR$/service-group/target/classes/META-INF/maven/jp.drjoy.service/service-group/pom.properties" />
+        <option value="$PROJECT_DIR$/service-group/pom.xml" />
+        <option value="$PROJECT_DIR$/service-config/target/classes/META-INF/maven/jp.drjoy.service/service-config/pom.properties" />
+        <option value="$PROJECT_DIR$/service-config/pom.xml" />
+        <option value="$PROJECT_DIR$/service-central/target/classes/META-INF/maven/jp.drjoy.service/service-central/pom.properties" />
+        <option value="$PROJECT_DIR$/service-central/pom.xml" />
+        <option value="$PROJECT_DIR$/service-gateway/target/classes/META-INF/maven/jp.drjoy.service/service-gateway/pom.properties" />
+        <option value="$PROJECT_DIR$/service-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/service-meeting/target/classes/META-INF/maven/jp.drjoy.service/service-meeting/pom.properties" />
+        <option value="$PROJECT_DIR$/service-meeting/pom.xml" />
+        <option value="$PROJECT_DIR$/service-monitor/target/classes/META-INF/maven/jp.drjoy.service/service-monitor/pom.properties" />
+        <option value="$PROJECT_DIR$/service-monitor/pom.xml" />
+        <option value="$PROJECT_DIR$/service-calendar/target/classes/META-INF/maven/jp.drjoy.service/service-calendar/pom.properties" />
+        <option value="$PROJECT_DIR$/service-calendar/pom.xml" />
+        <option value="$PROJECT_DIR$/service-template/target/classes/META-INF/maven/jp.drjoy.service/service-template/pom.properties" />
+        <option value="$PROJECT_DIR$/service-template/pom.xml" />
+        <option value="$PROJECT_DIR$/service-framework/target/classes/META-INF/maven/jp.drjoy.service/service-framework/pom.properties" />
+        <option value="$PROJECT_DIR$/service-framework/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/service-framework/pom.xml" />
+        <option value="$PROJECT_DIR$/service-web-front/target/classes/META-INF/maven/jp.drjoy.service/service-web-front/pom.properties" />
+        <option value="$PROJECT_DIR$/service-web-front/pom.xml" />
+        <option value="$PROJECT_DIR$/service-grpc-starter/target/classes/META-INF/maven/jp.drjoy.service.boot/service-grpc-starter/pom.properties" />
+        <option value="$PROJECT_DIR$/service-grpc-starter/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/service-grpc-starter/example/pom.xml" />
+        <option value="$PROJECT_DIR$/service-grpc-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/service-mobile-front/target/classes/META-INF/maven/jp.drjoy.service/service-mobile-front/pom.properties" />
+        <option value="$PROJECT_DIR$/service-mobile-front/pom.xml" />
+        <option value="$PROJECT_DIR$/service-registration/target/classes/META-INF/maven/jp.drjoy.service/service-registration/pom.properties" />
+        <option value="$PROJECT_DIR$/service-registration/target/maven-archiver/pom.properties" />
+        <option value="$PROJECT_DIR$/service-registration/pom.xml" />
+        <option value="$PROJECT_DIR$/service-notification-client/target/classes/META-INF/maven/jp.drjoy.service/service-push-notification/pom.properties" />
+        <option value="$PROJECT_DIR$/service-notification-client/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

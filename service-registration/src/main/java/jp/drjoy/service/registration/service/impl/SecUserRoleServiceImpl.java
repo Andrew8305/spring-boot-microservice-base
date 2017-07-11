@@ -9,9 +9,9 @@ import jp.drjoy.service.common.util.BeanUtil;
 import jp.drjoy.service.registration.dto.dxo.SecUserRoleDxoDto;
 import jp.drjoy.service.registration.dto.form.SecUserRoleForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRoleRstDto;
-import jp.drjoy.service.registration.entity.SecRole;
-import jp.drjoy.service.registration.entity.SecUser;
-import jp.drjoy.service.registration.entity.SecUserRole;
+import jp.drjoy.service.registration.entitygenerate.SecRole;
+import jp.drjoy.service.registration.entitygenerate.SecUser;
+import jp.drjoy.service.registration.entitygenerate.SecUserRole;
 import jp.drjoy.service.registration.repository.ISecUserRoleRepository;
 import jp.drjoy.service.registration.service.ISecUserRoleService;
 

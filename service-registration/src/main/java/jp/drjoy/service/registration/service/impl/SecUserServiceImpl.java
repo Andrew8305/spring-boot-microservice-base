@@ -9,7 +9,7 @@ import jp.drjoy.service.common.util.BeanUtil;
 import jp.drjoy.service.registration.dto.dxo.SecUserDxoDto;
 import jp.drjoy.service.registration.dto.form.SecUserForm;
 import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
-import jp.drjoy.service.registration.entity.SecUser;
+import jp.drjoy.service.registration.entitygenerate.SecUser;
 import jp.drjoy.service.registration.repository.ISecUserRepository;
 import jp.drjoy.service.registration.service.ISecUserService;
 

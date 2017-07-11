@@ -1,12 +1,10 @@
 package jp.drjoy.service.registration.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +19,7 @@ import jp.drjoy.service.common.util.Envelope;
 import jp.drjoy.service.registration.constant.TrasitionConst;
 import jp.drjoy.service.registration.dto.dxo.R001DxoDto;
 import jp.drjoy.service.registration.dto.form.R001Form;
-import jp.drjoy.service.registration.dto.rst.SecUserRstDto;
-import jp.drjoy.service.registration.entity.SecUser;
+import jp.drjoy.service.registration.dto.rst.R001RstDto;
 import jp.drjoy.service.registration.service.IR001Service;
 
 @RestController
@@ -43,9 +40,10 @@ public class R001Controller extends BaseControllerImpl{
 	 */
 	@RequestMapping(value = ACTION_ALL, method = RequestMethod.GET)
 	public final ResponseEntity<?> all(HttpServletRequest request) {
-		List<SecUser> secUsers;
-		secUsers = r001Service.getAllSecUser();
-		return (new ResponseEntity<>(convertToListSecUserRst(secUsers), HttpStatus.OK));
+		R001DxoDto dxo = new R001DxoDto();
+		dxo.setSecUserId(1l);
+		List<R001RstDto> r001RstDto = r001Service.getAllSecUserRole(dxo);
+		return (new ResponseEntity<>(r001RstDto, HttpStatus.OK));
 	}
 
 	/**
@@ -64,13 +62,4 @@ public class R001Controller extends BaseControllerImpl{
 		return new Envelope(rs).toResponseEntity(HttpStatus.OK);
 	}
 
-	private List<SecUserRstDto> convertToListSecUserRst(List<SecUser> secUsers){
-		List<SecUserRstDto> rstList= new ArrayList<>();
-		if(CollectionUtils.isNotEmpty(secUsers)){
-			for (SecUser secUser : secUsers) {
-				rstList.add((SecUserRstDto) BeanUtil.createAndCopyPropertiesNative(secUser, SecUserRstDto.class));
-			}
-		}
-		return rstList;
-	}
 }

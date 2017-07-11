@@ -1,16 +1,15 @@
-package jp.drjoy.service.registration.dto.rst;
+package jp.drjoy.service.registration.entity;
 
-import java.io.Serializable;
-
-import jp.drjoy.service.common.dto.DTO;
-
-public class R001RstDto extends DTO<Serializable> implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-
+public class R001Entity {
 	private Long userId;
 	private String username;
 	private Long roleId;
+
+	public R001Entity(Long userId, String username, Long roleId) {
+		this.userId = userId;
+		this.username = username;
+		this.roleId = roleId;
+	}
 
 	public Long getUserId() {
 		return userId;
